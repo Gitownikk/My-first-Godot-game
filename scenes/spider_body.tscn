@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://kimgw1i386si"]
+
+[ext_resource type="Texture2D" uid="uid://bw4blpty8rptp" path="res://spider.png" id="1_gemmt"]
+[ext_resource type="AudioStream" uid="uid://bxfjyhsmsm34" path="res://jump_sfx.mp3" id="2_7wbuw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ul6yo"]
+height = 20.0
+
+[node name="spiderBody" type="CharacterBody2D"]
+
+[node name="Spider" type="Sprite2D" parent="."]
+position = Vector2(9.72733, -9.5)
+scale = Vector2(0.0486367, 0.0491329)
+texture = ExtResource("1_gemmt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, -11)
+shape = SubResource("CapsuleShape2D_ul6yo")
+
+[node name="sfx" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(10, -11)
+stream = ExtResource("2_7wbuw")
+volume_db = -20.0
+pitch_scale = 1.6
